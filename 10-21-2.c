@@ -9,12 +9,12 @@ int count_bits(unsigned x){
   return bits;
 }
 int  int_bits(void){
-  return count_bits(-0U);
+  return count_bits(~0U);
 }
 void print_bits(unsigned x){
   int i;
   for(i=int_bits()-1;i>=0;i--){
-    putchar(((x>>1)&1U)?'1':'0');
+    putchar(((x>>i)&1U)?'1':'0');
   }
 }
 int main(){

@@ -38,9 +38,12 @@ int main () {
     getspace(space,help,year) ;
 
 
-    cout <<"                                      "<<year<<"年日历"<<"                                      "<<  endl ;
+    cout <<"                                               "<<year<<"年日历"<<"                                           "<<  endl ;
     cout << endl ;
+    cout << "                                                                            作者:余依蕾                      " << endl ; 
 
+    cout << endl ;
+    cout << endl ;
     cout << "              一月份              "<<"    " << "                二月份               " <<"    "<< "               三月份                "<<  endl ; 
     cout << endl ; 
     res(year,0,space,help,month,month1) ;
@@ -220,6 +223,7 @@ int firstspace( int y ){
     int d = 1 ;
     int m = 13 ;
     y-- ; 
+
     int i = (d + 2 * m + 3 * (m + 1) / 5 + y + y / 4 - y / 100 + y / 400) % 7;  
     
     i = ( i + 1 ) % 7 ;

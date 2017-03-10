@@ -29,6 +29,8 @@ int main () {
 
     cout <<"                            "<<year<<"年日历"<<"                                "<<  endl ;
     cout << endl ;
+    cout <<"                                         作者:余依蕾             " << endl; 
+    cout << endl ;
 
     cout << "        一月份      "<<"    " << "        二月份      " <<"    "<< "        三月份       "<<  endl ; 
     cout << endl ; 
@@ -122,7 +124,7 @@ void res(int start ,  int space[12] ,int help[12] , int month[12] ){
                 if (month[i] <= help[i] ){
                 
                     if ( month[i] < 10 )
-                        cout << "0" << month[i]++ << " " ;
+                        cout << " " << month[i]++ << " " ;
                     else 
                         cout << month[i]++ << " " ;
                 }

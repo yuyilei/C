@@ -1,6 +1,5 @@
 #include<iostream>
 // 把2017的农历写死 ,唉 QAQ!
-
 using namespace std ;
 
 int tell(int year)  ;

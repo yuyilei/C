@@ -9,7 +9,6 @@ int main(){
     printf("after alltrim : %s \n", str) ;
     return 0 ; 
 }
-
 void alltrim( char *pstr , char *pdstr) {
     char *pstart , *pend ;
     pstart = pstr ;

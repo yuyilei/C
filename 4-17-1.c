@@ -3,16 +3,16 @@
 int main() {
     char a[80] ; 
     gets(a) ;
-    int i = 0 , j , len ; 
-    len = strlen(a) ;
-    j = len - 1 ; 
-    while ( i <= j ){
-        if ( a[i] != a[j] ){
+    char *p , *q ;
+    p = a ;
+    q = a + strlen(a) - 1 ;
+    while ( p <= q  ){
+        if ( *p != *q  ){
             printf("No!\n") ; 
             return 0 ; 
         }
-        i++ ; 
-        j-- ;
+        p++ ; 
+        q-- ;
     }
     printf("Yes!\n") ;
     return 0 ; 

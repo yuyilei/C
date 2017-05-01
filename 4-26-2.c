@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<string.h>
-#include<algorithm>
 struct node{
     char word[20] ; 
     int num ; 
@@ -55,7 +54,6 @@ int main () {
         s++ ; 
         k--; 
     }
-    printf("%s\n",p[t].word) ; 
     k = t  ; 
     for ( i = k  ; i >= 0 ; i--) {
         int flag = 0 ; 
@@ -77,12 +75,15 @@ int main () {
             p[i].num = 0 ; 
         }
     }
-    for ( i = 0 ; i < k ; i++ ){
-        if ( p[i].num != 0 )
-        printf("%s:%d\n",p[i].word,p[i].num) ; 
+    for ( i = 0 ; i < z ; i++ ){
+        for ( j = 0 ; j + i < z - 1 ; j++){
+            if ( (q[j].num < q[j+1].num) || ((q[j].num==q[j+1].num)&&strcmp(q[j].word,q[j+1].word)>0 )){
+                temp  = q[j] ;
+                q[j] = q[j+1] ;
+                q[j+1] = temp  ; 
+            }
+        }
     }
-    printf("\n") ; 
-    qsort()
     for  ( i= 0 ; i < z ; i++) {
         printf("%s:%d\n",q[i].word,q[i].num) ; 
     }

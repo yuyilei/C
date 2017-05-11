@@ -20,10 +20,7 @@ int main() {
         }
         start-- ; 
         for ( i = 0 ; i < len2 ; i ++ ){
-            b[i] = a[start+i] ; 
-        }
-        for ( i = 0 ; i < len2 ; i++ ){
-            printf("%c",b[i]) ; 
+            printf("%c", a[start+i] ); 
         }
         printf("\n") ; 
         return 0 ; 
@@ -34,23 +31,20 @@ int main() {
         scanf("%s%s%d",a,b,&start) ; 
         len1  = strlen(a) ;
         len2 = strlen(b) ; 
-        while ( len2 < start){
+        while ( len1 < start){
             printf("无法输入!!!\n") ;
             scanf("%d",&start) ; 
         }
         for ( i = 0 ; i < len1 + len2 ; i++ ){
             if ( i < start ) {
-                c[i] = b[i] ; 
+                 printf("%c", a[i]) ; 
             }
-            else if ( i >= start && i < len1 + start ) {
-                c[i] = a[i-start] ; 
+            else if ( i >= start && i < len2 + start ) {
+                 printf("%c",b[i-start]) ; 
             }
             else {
-                c[i] = b[i-len1] ;
+                 printf("%c",a[i-start]) ;
             }
-        }
-        for ( i = 0 ; i < len2 + len1 ; i++ ) {
-            printf("%c",c[i]) ; 
         }
         printf("\n") ; 
         return 0 ; 
@@ -63,17 +57,12 @@ int main() {
             printf("无法删除子串!!\n") ;
             scanf("%d",&start) ;
         }
+        start-- ; 
         int k = 0 ;
         for ( i = 0 ; i < len2 ; i++ ){
-            if ( i < start) {
-                b[k++] = a[i] ;
+            if ( i < start || i>= start + len1) {
+                printf("%c",a[i]) ;
             }
-            else if ( i >= start + len1  ) {
-                b[k++] = a[i] ; 
-            }
-        }
-        for ( i = 0 ; i < k ; i++ ){
-            printf("%c",b[i]) ; 
         }
         printf("\n") ; 
         return 0 ; 

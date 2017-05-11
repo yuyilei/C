@@ -11,14 +11,11 @@ int main () {
         if ( sum  == k ){
             temp = i ; 
             for ( i = 0 ; i < n ; i++ ){
-                a[i] =  temp ; 
+                printf("%d ",temp ); 
                 temp += 2 ;
             }
-            break ; 
+            printf("\n") ; 
+            return 0 ;
         }
     }
-    for ( i = 0 ; i < n ; i++ ){
-        printf("%d ",a[i]) ; 
-    }
-    return 0 ; 
 }

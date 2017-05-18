@@ -1,13 +1,12 @@
 #include<stdio.h>
 #include<string.h>
 void alltrim( char *psstr ,char *psdstr);
-int main(){
+void  main(){
     char *pstr , str[20] ;
     pstr = "    Happy birthday !   " ;
     printf("before alltrim : %s \n" , pstr) ;
     alltrim(pstr,str) ;
     printf("after alltrim : %s \n", str) ;
-    return 0 ; 
 }
 void alltrim( char *pstr , char *pdstr) {
     char *pstart , *pend ;

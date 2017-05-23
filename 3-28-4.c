@@ -43,7 +43,6 @@ void multi(char a[] , char b[] , int c[] ){
         }
     }
 }
-
 void subtraction( char a[] , char b[] , int s[] ){
     int lena = strlen(a) ;
     int lenb = strlen(b) ;
@@ -59,15 +58,11 @@ void subtraction( char a[] , char b[] , int s[] ){
         s[i++] = '0' - b[j--] ;
     }
     int lens = i ; 
-    for ( int i = 0 ; i < lens -1 ; i++ ){
-        if ( s[i] < 0 ){
-            s[i] += 10 ;
-            s[i+1] -= 1 ; 
-        }
+    for ( int i = 0 ; i < lens - 1  ; i++ ){
+        s[i] = (s[i] < 0 ) ? (-s[i]) : s[i] ; 
     }
     printf("%s - %s = ",a,b) ;
     for ( int i = lens -1  ; i >=0 ; i --){
         printf("%d",s[i]) ;
     }
-
 }

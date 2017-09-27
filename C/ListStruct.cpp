@@ -76,13 +76,17 @@ void NextElem(LIST L, int cur_e , int &next_e) {
     }
 }
 
+
 // 插入元素
 void InsertElem(LIST &L ,int index , int e ) {
-    for ( int i = 0 ; i != index - 1 ; i-- ){
-        L.elem[i+1] = L.elem[i] ;
-     //   cout << L.elem[i+1] << endl ;
+    if ( index == 1 ){  
+        L.elem[index-1] = e ; 
+        L.length = 1 ; 
+        return ; 
     }
-    L.elem[index-1] = e ;
+    for (int i = L.length - 2 ; i > index - 1 ; i-- )  
+        L.elem[i+1] = L.elem[i] ; 
+    L.elem[index-1] = e ; 
     L.length += 1 ;
 }
 
@@ -102,15 +106,22 @@ void ListTraverse(LIST L) {
     cout << endl ;
 }
 
+
 // 主函数
 int main() {
     LIST L ;
     InitList(L) ;
+    cout << "After init the list, the List is Emtpy? 0 means empty, 1 means not empry." << endl ; 
     cout << ListEmpty(L) << endl ;
+    cout << "Before insert Elem the length is " << ListLength(L) << endl ;  
     for ( int i = 0 ; i < 10 ; i++ ) {
         InsertElem(L,i+1,i) ;
     }
-    for ( int i = 0 ; i < 10 ; i++ ) {
-        cout << L.elem[i] << endl ;
+    cout << "Insert 10 elems: " << endl ; 
+    ListTraverse(L) ; 
+    cout << "After insert the length is " << ListLength(L) << endl ;  
+    cout << endl ; 
+    for ( int i = 0 ; i < 10 ; i++ ){
+        cout << "The elem " << L.elem[i] << " is in the " << LocateElem(L,i) + 1 << "th" << endl ; 
     }
 }

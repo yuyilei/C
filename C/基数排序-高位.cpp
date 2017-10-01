@@ -76,13 +76,16 @@ void radix_sort(struct node *head ,int pos ) {
     for ( i = pos ; i >= 1 ; i-- ) {
         while ( head->next != NULL ) {
             q = GetFirstNode(head) ; 
-            if ( i == 1 ) {
-                AppendNode(result,q) ; 
-                return ; 
-            }
             k = GetNum(q,i) ; 
             AppendNode(p[k],q) ; 
         } 
+        if ( i == 1 ) {
+            for ( j = 0  ; j < 10 ; j++ ) {
+                if ( p[j]->next )
+                    AppendNode(result,p[j]->next) ; 
+            }      
+            return ; 
+        }
         for  ( j = 0 ; j < 10 ; j++ ) 
             radix_sort(p[j],pos-1) ; 
     }

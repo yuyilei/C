@@ -7,13 +7,18 @@ struct node {
     node() : data(0), next(NULL) {}
 } ; 
 int num , bit = 4 ;  
+struct node * InitNode(struct node * head , int & num ) ; 
+void show_elem(struct node *head ) ; 
+struct node * GetFirstNode(struct node  *head) ;
+void AppendNode(struct node  *head,struct node  *tmp) ; 
+void Total(struct node  *L, struct node  *tmp ) ; 
+int GetNum(struct node  *p , int pos ) ; 
+void radix_sort(struct node *head) ;   
 
 struct node * InitNode(struct node * head , int & num ) {
-    int n , id , age , i , t1 , t2 ; 
     struct node *tmp = head ; 
-    cin >> n ; 
-    num = n ; 
-    for ( i = 0 ; i < n ; i++ ) {
+    cin >> num ; 
+    for ( int i = 0 ; i < num ; i++ ) {
         tmp->next = new node() ; 
         tmp = tmp->next ; 
         cin >> tmp->data ; 
@@ -91,8 +96,7 @@ void radix_sort(struct node *head) {
 int main() {
     struct node *head = new node() ; 
     head = InitNode(head,num) ;
-    cout << endl ; 
-    cout << "Before radix sort    "  ; 
+    cout << "\nBefore radix sort    "  ; 
     show_elem(head) ; 
     radix_sort(head) ; 
     cout << "\nAfter radix sort     "  ; 
